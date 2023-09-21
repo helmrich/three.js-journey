@@ -38,11 +38,12 @@ window.addEventListener("resize", () => {
 
   // Update renderer
   renderer.setSize(sizes.width, sizes.height);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 });
 
 window.addEventListener("dblclick", () => {
-  const fullscreenElement = document.fullscreenElement || document.webkitFullscreenElement;
+  const fullscreenElement =
+    document.fullscreenElement || document.webkitFullscreenElement;
 
   if (!fullscreenElement) {
     if (canvas.requestFullscreen) {
@@ -68,7 +69,7 @@ const camera = new THREE.PerspectiveCamera(
   75,
   sizes.width / sizes.height,
   0.1,
-  100
+  100,
 );
 camera.position.z = 3;
 scene.add(camera);

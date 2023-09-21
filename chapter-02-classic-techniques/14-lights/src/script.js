@@ -1,8 +1,8 @@
-import './style.css';
-import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import * as dat from 'dat.gui';
-import { RectAreaLightHelper } from 'three/examples/jsm/helpers/RectAreaLightHelper.js';
+import "./style.css";
+import * as THREE from "three";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import * as dat from "dat.gui";
+import { RectAreaLightHelper } from "three/examples/jsm/helpers/RectAreaLightHelper.js";
 
 /**
  * Base
@@ -11,7 +11,7 @@ import { RectAreaLightHelper } from 'three/examples/jsm/helpers/RectAreaLightHel
 const gui = new dat.GUI();
 
 // Canvas
-const canvas = document.querySelector('canvas.webgl');
+const canvas = document.querySelector("canvas.webgl");
 
 // Scene
 const scene = new THREE.Scene();
@@ -87,7 +87,7 @@ const cube = new THREE.Mesh(new THREE.BoxGeometry(0.75, 0.75, 0.75), material);
 
 const torus = new THREE.Mesh(
   new THREE.TorusGeometry(0.3, 0.2, 32, 64),
-  material
+  material,
 );
 torus.position.x = 1.5;
 
@@ -105,7 +105,7 @@ const sizes = {
   height: window.innerHeight,
 };
 
-window.addEventListener('resize', () => {
+window.addEventListener("resize", () => {
   // Update sizes
   sizes.width = window.innerWidth;
   sizes.height = window.innerHeight;
@@ -127,7 +127,7 @@ const camera = new THREE.PerspectiveCamera(
   75,
   sizes.width / sizes.height,
   0.1,
-  100
+  100,
 );
 camera.position.x = 1;
 camera.position.y = 1;

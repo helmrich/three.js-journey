@@ -1,7 +1,7 @@
-import './style.css';
-import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import * as dat from 'dat.gui';
+import "./style.css";
+import * as THREE from "three";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import * as dat from "dat.gui";
 
 /**
  * Base
@@ -10,7 +10,7 @@ import * as dat from 'dat.gui';
 const gui = new dat.GUI();
 
 // Canvas
-const canvas = document.querySelector('canvas.webgl');
+const canvas = document.querySelector("canvas.webgl");
 
 // Scene
 const scene = new THREE.Scene();
@@ -23,7 +23,7 @@ const scene = new THREE.Scene();
  * Textures
  */
 const textureLoader = new THREE.TextureLoader();
-const matcapTexture = textureLoader.load('/textures/matcaps/8.png');
+const matcapTexture = textureLoader.load("/textures/matcaps/8.png");
 
 /**
  * Fonts
@@ -32,8 +32,8 @@ const matcapTexture = textureLoader.load('/textures/matcaps/8.png');
 // Font Loader
 const fontLoader = new THREE.FontLoader();
 
-fontLoader.load('/fonts/helvetiker_regular.typeface.json', (font) => {
-  const textGeometry = new THREE.TextGeometry('Hello Three.js', {
+fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
+  const textGeometry = new THREE.TextGeometry("Hello Three.js", {
     font,
     size: 0.5,
     height: 0.2,
@@ -93,7 +93,7 @@ const sizes = {
   height: window.innerHeight,
 };
 
-window.addEventListener('resize', () => {
+window.addEventListener("resize", () => {
   // Update sizes
   sizes.width = window.innerWidth;
   sizes.height = window.innerHeight;
@@ -115,7 +115,7 @@ const camera = new THREE.PerspectiveCamera(
   75,
   sizes.width / sizes.height,
   0.1,
-  100
+  100,
 );
 camera.position.x = 1;
 camera.position.y = 1;
