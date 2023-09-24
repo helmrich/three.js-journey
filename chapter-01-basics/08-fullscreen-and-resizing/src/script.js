@@ -1,12 +1,12 @@
-import "./style.css";
-import * as THREE from "three";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import './style.css';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 /**
  * Base
  */
 // Canvas
-const canvas = document.querySelector("canvas.webgl");
+const canvas = document.querySelector('canvas.webgl');
 
 // Scene
 const scene = new THREE.Scene();
@@ -27,7 +27,7 @@ const sizes = {
   height: window.innerHeight,
 };
 
-window.addEventListener("resize", () => {
+window.addEventListener('resize', () => {
   // Update sizes
   sizes.width = window.innerWidth;
   sizes.height = window.innerHeight;
@@ -41,7 +41,7 @@ window.addEventListener("resize", () => {
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 });
 
-window.addEventListener("dblclick", () => {
+window.addEventListener('dblclick', () => {
   const fullscreenElement =
     document.fullscreenElement || document.webkitFullscreenElement;
 

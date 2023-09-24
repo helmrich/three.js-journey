@@ -1,6 +1,6 @@
-import "./style.css";
-import * as THREE from "three";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import './style.css';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 /**
  * Textures
@@ -18,35 +18,35 @@ image.src = '/textures/door/color.jpg'; */
 // Load texture using LoadingManager and TextureLoader (better)
 const loadingManager = new THREE.LoadingManager();
 loadingManager.onStart = () => {
-  console.log("Loading started");
+  console.log('Loading started');
 };
 loadingManager.onLoad = () => {
-  console.log("Loading finished");
+  console.log('Loading finished');
 };
 loadingManager.onProgress = () => {
-  console.log("Loading progressing");
+  console.log('Loading progressing');
 };
 loadingManager.onError = () => {
-  console.log("Loading error");
+  console.log('Loading error');
 };
 
 const textureLoader = new THREE.TextureLoader(loadingManager);
 const checkerboardTexture = textureLoader.load(
-  "/textures/checkerboard-1024x1024.png",
+  '/textures/checkerboard-1024x1024.png',
 );
 const checkerboardSmallTexture = textureLoader.load(
-  "/textures/checkerboard-8x8.png",
+  '/textures/checkerboard-8x8.png',
 );
-const minecraftTexture = textureLoader.load("/textures/minecraft.png");
-const colorTexture = textureLoader.load("/textures/door/color.jpg");
-const alphaTexture = textureLoader.load("/textures/door/alpha.jpg");
-const heightTexture = textureLoader.load("/textures/door/height.jpg");
-const normalTexture = textureLoader.load("/textures/door/normal.jpg");
+const minecraftTexture = textureLoader.load('/textures/minecraft.png');
+const colorTexture = textureLoader.load('/textures/door/color.jpg');
+const alphaTexture = textureLoader.load('/textures/door/alpha.jpg');
+const heightTexture = textureLoader.load('/textures/door/height.jpg');
+const normalTexture = textureLoader.load('/textures/door/normal.jpg');
 const ambientOcclusionTexture = textureLoader.load(
-  "/textures/door/ambientOcclusion.jpg",
+  '/textures/door/ambientOcclusion.jpg',
 );
-const metalnessTexture = textureLoader.load("/textures/door/metalness.jpg");
-const roughnessTexture = textureLoader.load("/textures/door/roughness.jpg");
+const metalnessTexture = textureLoader.load('/textures/door/metalness.jpg');
+const roughnessTexture = textureLoader.load('/textures/door/roughness.jpg');
 
 // colorTexture.repeat.x = 2;
 // colorTexture.repeat.y = 3;
@@ -69,7 +69,7 @@ minecraftTexture.magFilter = THREE.NearestFilter;
  * Base
  */
 // Canvas
-const canvas = document.querySelector("canvas.webgl");
+const canvas = document.querySelector('canvas.webgl');
 
 // Scene
 const scene = new THREE.Scene();
@@ -91,7 +91,7 @@ const sizes = {
   height: window.innerHeight,
 };
 
-window.addEventListener("resize", () => {
+window.addEventListener('resize', () => {
   // Update sizes
   sizes.width = window.innerWidth;
   sizes.height = window.innerHeight;

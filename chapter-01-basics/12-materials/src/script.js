@@ -1,7 +1,7 @@
-import "./style.css";
-import * as THREE from "three";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-import * as dat from "dat.gui";
+import './style.css';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import * as dat from 'dat.gui';
 
 /**
  * Debug
@@ -15,40 +15,40 @@ const textureLoader = new THREE.TextureLoader();
 const cubeTextureLoader = new THREE.CubeTextureLoader();
 
 // Load door textures
-const doorAlphaTexture = textureLoader.load("/textures/door/alpha.jpg");
+const doorAlphaTexture = textureLoader.load('/textures/door/alpha.jpg');
 const doorAmbientOcclusionTexture = textureLoader.load(
-  "/textures/door/ambientOcclusion.jpg",
+  '/textures/door/ambientOcclusion.jpg',
 );
-const doorColorTexture = textureLoader.load("/textures/door/color.jpg");
-const doorHeightTexture = textureLoader.load("/textures/door/height.jpg");
-const doorMetalnessTexture = textureLoader.load("/textures/door/metalness.jpg");
-const doorNormalTexture = textureLoader.load("/textures/door/normal.jpg");
-const doorRoughnessTexture = textureLoader.load("/textures/door/roughness.jpg");
+const doorColorTexture = textureLoader.load('/textures/door/color.jpg');
+const doorHeightTexture = textureLoader.load('/textures/door/height.jpg');
+const doorMetalnessTexture = textureLoader.load('/textures/door/metalness.jpg');
+const doorNormalTexture = textureLoader.load('/textures/door/normal.jpg');
+const doorRoughnessTexture = textureLoader.load('/textures/door/roughness.jpg');
 
 // Load gradient texture
-const gradientTexture = textureLoader.load("/textures/gradients/3.jpg");
+const gradientTexture = textureLoader.load('/textures/gradients/3.jpg');
 gradientTexture.minFilter = THREE.NearestFilter;
 gradientTexture.magFilter = THREE.NearestFilter;
 gradientTexture.generateMipmaps = false;
 
 // Load matcap texture
-const matcapTexture = textureLoader.load("/textures/matcaps/8.png");
+const matcapTexture = textureLoader.load('/textures/matcaps/8.png');
 
 // Load environment texture using the Cube Texture Loader
 const environmentMapTexture = cubeTextureLoader.load([
-  "/textures/environmentMaps/0/px.jpg",
-  "/textures/environmentMaps/0/nx.jpg",
-  "/textures/environmentMaps/0/py.jpg",
-  "/textures/environmentMaps/0/ny.jpg",
-  "/textures/environmentMaps/0/pz.jpg",
-  "/textures/environmentMaps/0/nz.jpg",
+  '/textures/environmentMaps/0/px.jpg',
+  '/textures/environmentMaps/0/nx.jpg',
+  '/textures/environmentMaps/0/py.jpg',
+  '/textures/environmentMaps/0/ny.jpg',
+  '/textures/environmentMaps/0/pz.jpg',
+  '/textures/environmentMaps/0/nz.jpg',
 ]);
 
 /**
  * Base
  */
 // Canvas
-const canvas = document.querySelector("canvas.webgl");
+const canvas = document.querySelector('canvas.webgl');
 
 // Scene
 const scene = new THREE.Scene();
@@ -116,8 +116,8 @@ material.envMap = environmentMapTexture;
 // material.transparent = true;
 // material.alphaMap = doorAlphaTexture;
 
-gui.add(material, "metalness").min(0).max(1).step(0.0001);
-gui.add(material, "roughness").min(0).max(1).step(0.0001);
+gui.add(material, 'metalness').min(0).max(1).step(0.0001);
+gui.add(material, 'roughness').min(0).max(1).step(0.0001);
 // gui.add(material, 'aoMapIntensity').min(0).max(10).step(0.0001);
 // gui.add(material, 'displacementScale').min(0).max(0.1).step(0.0001);
 
@@ -128,13 +128,13 @@ gui.add(material, "roughness").min(0).max(1).step(0.0001);
 const sphere = new THREE.Mesh(new THREE.SphereGeometry(0.5, 64, 64), material);
 sphere.position.x = -1.5;
 sphere.geometry.setAttribute(
-  "uv2",
+  'uv2',
   new THREE.BufferAttribute(sphere.geometry.attributes.uv.array, 2),
 );
 
 const plane = new THREE.Mesh(new THREE.PlaneGeometry(1, 1, 100, 100), material);
 plane.geometry.setAttribute(
-  "uv2",
+  'uv2',
   new THREE.BufferAttribute(plane.geometry.attributes.uv.array, 2),
 );
 
@@ -144,7 +144,7 @@ const torus = new THREE.Mesh(
 );
 torus.position.x = 1.5;
 torus.geometry.setAttribute(
-  "uv2",
+  'uv2',
   new THREE.BufferAttribute(torus.geometry.attributes.uv.array, 2),
 );
 
@@ -171,7 +171,7 @@ const sizes = {
   height: window.innerHeight,
 };
 
-window.addEventListener("resize", () => {
+window.addEventListener('resize', () => {
   // Update sizes
   sizes.width = window.innerWidth;
   sizes.height = window.innerHeight;

@@ -1,6 +1,6 @@
-import "./style.css";
-import * as THREE from "three";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import './style.css';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 /**
  * Cursor
@@ -10,7 +10,7 @@ const cursor = {
   y: 0,
 };
 
-window.addEventListener("mousemove", (event) => {
+window.addEventListener('mousemove', (event) => {
   cursor.x = event.clientX / sizes.width - 0.5;
   cursor.y = -(event.clientY / sizes.height - 0.5);
 });
@@ -19,7 +19,7 @@ window.addEventListener("mousemove", (event) => {
  * Base
  */
 // Canvas
-const canvas = document.querySelector("canvas.webgl");
+const canvas = document.querySelector('canvas.webgl');
 
 // Sizes
 const sizes = {

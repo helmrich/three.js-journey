@@ -1,8 +1,8 @@
-import "./style.css";
-import * as THREE from "three";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-import gsap from "gsap";
-import * as dat from "dat.gui";
+import './style.css';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import gsap from 'gsap';
+import * as dat from 'dat.gui';
 
 /**
  * Debug
@@ -19,7 +19,7 @@ const parameters = {
  * Base
  */
 // Canvas
-const canvas = document.querySelector("canvas.webgl");
+const canvas = document.querySelector('canvas.webgl');
 
 // Scene
 const scene = new THREE.Scene();
@@ -33,14 +33,14 @@ const mesh = new THREE.Mesh(geometry, material);
 scene.add(mesh);
 
 // Debug
-gui.add(mesh.position, "y").min(-3).max(3).step(0.01).name("Elevation");
-gui.add(mesh.rotation, "y").min(-3).max(3).step(0.01).name("Rotation");
-gui.add(mesh, "visible");
-gui.add(material, "wireframe");
-gui.addColor(parameters, "color").onChange(() => {
+gui.add(mesh.position, 'y').min(-3).max(3).step(0.01).name('Elevation');
+gui.add(mesh.rotation, 'y').min(-3).max(3).step(0.01).name('Rotation');
+gui.add(mesh, 'visible');
+gui.add(material, 'wireframe');
+gui.addColor(parameters, 'color').onChange(() => {
   material.color.set(parameters.color);
 });
-gui.add(parameters, "spin");
+gui.add(parameters, 'spin');
 
 /**
  * Sizes
@@ -50,7 +50,7 @@ const sizes = {
   height: window.innerHeight,
 };
 
-window.addEventListener("resize", () => {
+window.addEventListener('resize', () => {
   // Update sizes
   sizes.width = window.innerWidth;
   sizes.height = window.innerHeight;

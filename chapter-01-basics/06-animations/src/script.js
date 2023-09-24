@@ -1,9 +1,9 @@
-import "./style.css";
-import * as THREE from "three";
-import gsap from "gsap";
+import './style.css';
+import * as THREE from 'three';
+import gsap from 'gsap';
 
 // Canvas
-const canvas = document.querySelector("canvas.webgl");
+const canvas = document.querySelector('canvas.webgl');
 
 // Scene
 const scene = new THREE.Scene();

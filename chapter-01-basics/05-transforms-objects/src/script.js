@@ -1,9 +1,9 @@
-import "./style.css";
-import * as THREE from "three";
-import { ClampToEdgeWrapping } from "three";
+import './style.css';
+import * as THREE from 'three';
+import { ClampToEdgeWrapping } from 'three';
 
 // Canvas
-const canvas = document.querySelector("canvas.webgl");
+const canvas = document.querySelector('canvas.webgl');
 
 // Scene
 const scene = new THREE.Scene();
