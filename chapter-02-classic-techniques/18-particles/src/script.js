@@ -1,6 +1,6 @@
-import * as dat from 'lil-gui';
-import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import * as dat from "lil-gui";
+import * as THREE from "three";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
 THREE.ColorManagement.enabled = false;
 
@@ -11,7 +11,7 @@ THREE.ColorManagement.enabled = false;
 const gui = new dat.GUI();
 
 // Canvas
-const canvas = document.querySelector('canvas.webgl');
+const canvas = document.querySelector("canvas.webgl");
 
 // Scene
 const scene = new THREE.Scene();
@@ -20,7 +20,7 @@ const scene = new THREE.Scene();
  * Textures
  */
 const textureLoader = new THREE.TextureLoader();
-const particleTexture = textureLoader.load('/textures/particles/2.png');
+const particleTexture = textureLoader.load("/textures/particles/2.png");
 
 /**
  * Particles
@@ -38,11 +38,11 @@ for (let i = 0; i < count * 3; i++) {
 }
 
 particlesGeometry.setAttribute(
-  'position',
-  new THREE.BufferAttribute(positions, 3)
+  "position",
+  new THREE.BufferAttribute(positions, 3),
 );
 
-particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+particlesGeometry.setAttribute("color", new THREE.BufferAttribute(colors, 3));
 
 // Material
 const particlesMaterial = new THREE.PointsMaterial({
@@ -80,7 +80,7 @@ const sizes = {
   height: window.innerHeight,
 };
 
-window.addEventListener('resize', () => {
+window.addEventListener("resize", () => {
   // Update sizes
   sizes.width = window.innerWidth;
   sizes.height = window.innerHeight;
@@ -102,7 +102,7 @@ const camera = new THREE.PerspectiveCamera(
   75,
   sizes.width / sizes.height,
   0.1,
-  100
+  100,
 );
 camera.position.z = 3;
 scene.add(camera);
@@ -138,7 +138,7 @@ const tick = () => {
 
     const x = particlesGeometry.attributes.position.array[i3];
     particlesGeometry.attributes.position.array[i3 + 1] = Math.sin(
-      elapsedTime + x
+      elapsedTime + x,
     );
   }
 
